@@ -1,0 +1,202 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --studio_tab_btn: #b72ded;
+  --pale-violet-red: #db5c96;
+  --orchid: #e15ad0;
+  --grey: grey;
+  --slate-blue: #4655d2;
+  --black: #202226;
+  --white: white;
+  --royal-blue: #a4dff7;
+  --medium-blue: #3c19cd;
+  --background: #141516;
+  --dark-blue: #030328;
+  --purple: #aaa5fb;
+  --blue-violet: #9c47f1;
+  --link_hover: #213835;}
+
+#App{
+  background-image: linear-gradient(135deg, var(--blue-violet), var(--purple),var(--orchid) 69%);
+}
+#titleApp{
+  font-size: 30px;
+  color: white;
+}
+
+#ImagePreview{
+  cursor: pointer; 
+  display: block;
+}
+#containerpreview{
+  position: relative;
+}
+
+#ImagePreview:hover{
+  background-image: linear-gradient(135deg, var(--blue-violet), var(--purple),var(--orchid) 69%);
+  opacity: 0.7;
+}
+#Button{
+  background-image: linear-gradient(135deg, var(--white), var(--slate-blue) 69%);
+position: absolute;
+top: 80%;
+left: 45%;
+transform: translate(-45%, -80%);
+opacity: 0;
+width: 150px;
+}
+
+#containerpreview:hover #Button{
+  opacity: 1;
+}
+
+#containerImage{
+  z-index: 1;
+  position: relative;
+}
+#LightBox{
+  z-index: 100;
+  position: fixed;
+  background-image: linear-gradient(135deg, var(--white), var(--slate-blue) 69%);
+   top: 50%;
+ left: 50%;
+ transform: translate(-50%,-50%);
+width: 800px;
+height: 400px;
+opacity: 1 !important;
+/* Use flex to center the image */
+display: flex; 
+justify-content: center; 
+align-items: center; 
+}
+
+
+@media screen and (max-width: 991px)  {
+  #LightBox {
+    width: 700px;
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 800px)  {
+  #LightBox {
+    width: 600px;
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 700px)  {
+  #LightBox {
+    width: 490px;
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 550px)  {
+  #LightBox {
+    width: 390px;
+    height: 300px;
+  }
+}
+@media screen and (max-width: 469px)  {
+  #LightBox {
+    width: 300px;
+    height: 250px;
+  }
+}
+#LightBoxContainer{
+  z-index: 90;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+width: 100%;  
+height: 100%; 
+background-color: rgba(128, 128, 128, 0.5);
+}
+
+#xicon{
+  position: absolute;
+  top: 0px;
+ left: 102%;
+ transform: translate(-102%,0);
+  cursor: pointer; 
+  color: white;
+  z-index: 170;
+}
+
+#BackButton{
+  position: absolute;
+  top: 50%;
+  left: 10px; 
+  transform: translateY(-50%);
+  padding: 10px;
+  z-index: 150;
+  color: white;
+background-color: transparent;
+box-shadow: 3px 4px 10px rgba(247, 245, 245, 0.678);
+background-image: linear-gradient(135deg, var(--blue-violet), var(--purple),var(--orchid) 69%);
+border-radius: 20%;
+}
+#BackButton:disabled{
+  opacity: 0;
+}
+#NextButton{
+  position: absolute;
+  top: 50%;
+  right: 10px; 
+  color: white;
+  transform: translateY(-50%);
+  padding: 10px;
+  z-index: 150;
+  background-color: #030328;
+  border-radius: 20%;
+  background-color: transparent;
+box-shadow: 3px 4px 10px rgba(247, 245, 245, 0.678);
+background-image: linear-gradient(135deg, var(--blue-violet), var(--purple),var(--orchid) 69%);
+border-radius: 20%;
+}
+#NextButton:disabled{
+  opacity: 0;
+}
+
+/* for animation style  */
+
+.box {
+  width: 200px; 
+  height: 200px; 
+  background-color:rgba(212, 212, 212, 0.685);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  position: fixed;
+  z-index: 200;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+#spanloading{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  font-size: 30px;
+  color: var(--dark-blue);
+}
